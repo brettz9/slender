@@ -1,0 +1,17 @@
+[h1 [
+  `The Famous Cats of YouTube`
+]]
+
+[ul ${cats.map(({id, name}, i) =>
+  <li [
+    [a {target: _blank href: https://www.youtube.com/watch?v=${id}} [
+      `${i + 1}: ${name}`
+    ]]
+  ]>
+))}]
+
+
+// Function demo
+[button {$on {click () {
+  alert('Hello')
+}}}]
