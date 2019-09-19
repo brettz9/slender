@@ -3,11 +3,11 @@
 ]]
 
 [ul ${cats.map(({id, name}, i) =>
-  <li [
+  <[li [
     [a {target: _blank href: https://www.youtube.com/watch?v=${id}} [
       `${i + 1}: ${name}`
     ]]
-  ]>
+  ]]>
 ))}]
 
 
