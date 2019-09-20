@@ -1,0 +1,24 @@
+{
+  main: (cats) => $_`
+    // Using angled brackets gives advantage of distinct structure
+    //  for element creation so clear regardless of context (and might
+    //  possibly insist on escaping within a string, though problematic
+    //  for script tags using gt/lt)
+    <h1 [
+      ~The Famous Cats of YouTube~
+    ]>
+
+    <ul ${cats.map(({id, name}, i) =>
+      $_`<li [
+        [a {target: _blank href: https://www.youtube.com/watch?v=${id}} [
+          ~${i + 1}: ${name}~
+        ]>
+      ]>`
+    ))}>
+
+    // Function demo
+    <button {$on {click () {
+      alert('Hello')
+    }}}>
+    `
+}
