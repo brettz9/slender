@@ -10,7 +10,13 @@
 
     <ul ${cats.map(({id, name}, i) =>
       $_`<li [
-        [a {target: _blank href: https://www.youtube.com/watch?v=${id}} [
+        // While lack of curly brackets is not a good fit for arbitrary
+        //  JSON, it is not necessary for Jamilih
+        // We choose square brackets over more HTML-like gt since it is
+        //   both more attractive, more distinctive, and bi-directional;
+        //   compared to HTML for size, we lose the closing tag text and
+        //   its slash
+        <a target: _blank href: https://www.youtube.com/watch?v=${id} [
           ~${i + 1}: ${name}~
         ]>
       ]>`
