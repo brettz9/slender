@@ -5,7 +5,9 @@
     //  possibly insist on escaping within a string, though problematic
     //  for script tags using gt/lt)
     <h1 [
-      ~The Famous Cats of YouTube~
+      // Though not good for arbitrary JSON, we can avoid tilde/backtick/quotes
+      //  for text in Jamilih
+      The Famous Cats of YouTube
     ]>
 
     <ul ${cats.map(({id, name}, i) =>
@@ -17,7 +19,7 @@
         //   compared to HTML for size, we lose the closing tag text and
         //   its slash
         <a target: _blank href: https://www.youtube.com/watch?v=${id} [
-          ~${i + 1}: ${name}~
+          ${i + 1}: ${name}
         ]>
       ]>`
     ))}>
