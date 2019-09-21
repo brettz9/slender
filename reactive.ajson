@@ -1,23 +1,23 @@
 {
   main: (cats) => $_`
-    // Using angled brackets gives advantage of distinct structure
-    //  for element creation so clear regardless of context (and might
-    //  possibly insist on escaping within a string, though problematic
-    //  for script tags using gt/lt)
+    <- Using angled brackets gives advantage of distinct structure
+        for element creation so clear regardless of context (and might
+        possibly insist on escaping within a string, though problematic
+        for script tags using gt/lt) ->
     <h1 [
-      // Though not good for arbitrary JSON, we can avoid tilde/backtick/quotes
-      //  for text in Jamilih
+      <- Though not good for arbitrary JSON, we can avoid
+          tilde/backtick/quotes for text in Jamilih ->
       The Famous Cats of YouTube
     ]>
 
     <ul ${cats.map(({id, name}, i) =>
       $_`<li [
-        // While lack of curly brackets is not a good fit for arbitrary
-        //  JSON, it is not necessary for Jamilih
-        // We choose square brackets over more HTML-like gt since it is
-        //   both more attractive, more distinctive, and bi-directional;
-        //   compared to HTML for size, we lose the closing tag text and
-        //   its slash
+        <- While lack of curly brackets is not a good fit for arbitrary
+          JSON, it is not necessary for Jamilih
+          We choose square brackets over more HTML-like gt since it is
+           both more attractive, more distinctive, and bi-directional;
+           compared to HTML for size, we lose the closing tag text and
+           its slash ->
         <a target: _blank href: https://www.youtube.com/watch?v=${id} [
           ${i + 1}: ${name}
         ]>
